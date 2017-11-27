@@ -1,0 +1,71 @@
+body{
+    background-image: url(pics/bg3.png);
+    background-color: black;
+}
+.form-wrap{
+  margin: 0 auto;
+  background-color:#C4C4DF;
+  border-radius:20px;
+  padding:30px;
+  display:inline-block;
+}
+
+header {
+  padding: 20px 0;
+    margin-bottom: 3rem; 
+    margin-top: 1rem;
+}
+
+header .row {
+  display: flex;
+  align-items: center;
+}
+
+header h1 {
+  font-family:sans-serif;  
+  font-style: oblique;
+  font-weight: 500;
+  margin: 0;
+  color: beige;
+}
+header h1:hover {
+  color: #C4C4DF;    
+}
+
+header nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+header p {
+  padding: 0 20px;
+  margin: 0.5rem;
+  font-size: 2rem;
+  color: beige;
+  padding: 2rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;    
+  border: 0.01rem solid beige;  
+}
+
+header p:hover {
+  color:#333333;
+  background-color: #C4C4DF;
+}
+
+section label{
+  font-size:14px;
+}
+section h5{ 
+  text-decoration:underline;
+}
+section h5:hover{ 
+  color:blueviolet;
+}
+
+footer {
+  font-size: 1.5rem;
+  padding: 20px 0;
+  margin-top: 3rem;
+  text-align: right;    
+}
