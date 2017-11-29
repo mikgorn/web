@@ -43,7 +43,7 @@
         <td>".$row["payment"]."</td>
         <td>".$row["deadline"]."</td>
         <td>
-          <button type='submit' class='btn btn-default' onclick=\"window.location.href='job.php?id=$id'\">Apply</button>
+          <button type='submit' class='btn btn-default' onclick=\"window.location.href='job.php?id=$id'\">More</button>
         </td>
         </tr>";
     }

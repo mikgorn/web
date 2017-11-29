@@ -54,5 +54,9 @@
   <button type="submit" class="btn btn-default">Go to Job list</button>
 </form>
 
+<form action="modify-profile.php">
+  <button type="submit" class="btn btn-default">Modify profile</button>
+</form>
+
 </body>
 </html>

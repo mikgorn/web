@@ -12,25 +12,20 @@
 <body>
 
   <?php
-  session_start();
-  $email=$_SESSION["email"];
-  session_write_close();
-    $test=$_GET["test"];
-    if($test=="duplicate"){
-      echo"<div class='alert alert-danger'>Job with same name is already exists!</div>";
-    }else{
+    $id=$_GET["id"];
+
+    session_start();
+    $email=$_SESSION["email"];
+    session_write_close();
 
 
-
-
-
-    $name=$_POST["name"];
-    $description=$_POST["description"];
+    $name = $_POST["name"];
+    $description = $_POST["description"];
     $skill = $_POST["skill"];
     $payment = $_POST["payment"];
     $deadline = $_POST["deadline"];
 
-    $id=uniqid();
+
 
     include("server.php");
 
@@ -40,33 +35,45 @@
     if ($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
     }
-    $sql = "select * from jobs where name='$name';";
+    $sql = "select * from jobs where id='$id';";
     $result = $conn->query($sql);
+      $row = $result->fetch_assoc();
+      if($email!=$row["email"]){
+        echo"<div class='alert alert-danger'>You are not owner of this Job!</div>";
 
-    echo "<br />";
-
-    if($result->num_rows>0){
-      header("Location: new-job.php?test=duplicate");
-    } else{
-      if($name!="" && $description!=""){
-      $sql = "insert into jobs(id,name,email,description,skill,payment,deadline) values('$id','$name','$email','$description','$skill','$payment','$deadline');";
+      } else{
+    if($name !=""){
+      $sql = "update jobs set name='$name' where id='$id';";
       $conn->query($sql);
-      echo"<div class='alert alert-success'>Job added</div>";
-      header("Location: job.php?new=true&id=$id");
-    } else{
-      if($name . $description!=""){
-      echo"<div class='alert alert-danger'>Enter required fields!</div>";
     }
+    if($description !=""){
+      $sql = "update jobs set description='$description' where id='$id';";
+      $conn->query($sql);
     }
+    if($skill !=""){
+      $sql = "update jobs set skill='$skill' where id='$id';";
+      $conn->query($sql);
     }
-  } else{
-    echo"<div class='alert alert-danger'>Please log in!</div>";
+    if($payment !=""){
+      $sql = "update jobs set payment='$payment' where id='$id';";
+      $conn->query($sql);
+    }
+    if($deadline !=""){
+      $sql = "update jobs set deadline='$deadline' where id='$id';";
+      $conn->query($sql);
+    }
   }
-}
+  } else{
+    echo"<div class='alert alert-danger'>Log In first!</div>";
+    echo"$email";
+  }
 
-
+  $sql = "select * from jobs where id='$id';";
+  $result = $conn->query($sql);
+  $row = $result->fetch_assoc();
    ?>
-  <h1>Signup page of Burgerboss</h1>
+  <h1>Modify job <?php echo$row["name"];?></h1>
+
 
   <form method ="post">
 
@@ -76,7 +83,7 @@
     <label>Description</label>
     <input type="text" class="form-control" name="description" />
 
-    <label>Skill requirement</label>
+    <label>Skill requrement</label>
     <input type="text" class="form-control" name="skill" />
 
     <label>Payment</label>
@@ -85,8 +92,8 @@
     <label>Deadline</label>
     <input type="text" class="form-control" name="deadline" />
 
-    <button type="submit" class="btn btn-default" >Create new Job</button>
 
+    <button type="submit" class="btn btn-default" >Modify</button>
   </form>
 
 

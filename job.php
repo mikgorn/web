@@ -18,7 +18,7 @@
 
 
   session_start();
-  $user=$_SESSION["email"];
+  $email=$_SESSION["email"];
   session_write_close();
 
 
@@ -36,12 +36,13 @@
     if($new=="true"){
       echo"<div class='alert alert-success'>Job successfully added!</div>";
     }
+      $id=$row["id"];
       $name = $row["name"];
       $description = $row["description"];
       $skill = $row["skill"];
       $payment = $row["payment"];
       $deadline = $row["deadline"];
-
+      $owner = $row["email"];
 
 
     }else {
@@ -50,11 +51,11 @@
 
     $text=$_POST["text"];
     if($text!=""){
-      if($user==""){
+      if($email==""){
         echo"<div class='alert alert-danger'>Please log in first!</div>";
       } else{
         $comment_id=uniqid();
-        $sql = "insert into comments(id,job,user,text,chosen) values('$comment_id','$id','$user','$text',0);";
+        $sql = "insert into comments(id,job,user,text,chosen) values('$comment_id','$id','$email','$text',0);";
         $conn->query($sql);
         echo"<div class='alert alert-success'>Comment successfully added!</div>";
       }
@@ -125,7 +126,10 @@ if(mysqli_num_rows($result)>0){
 
   <button type="submit" class="btn btn-default" >Apply</button>
 </form>
-
+<?php
+if($email==$owner){
+  echo"<button type='submit' class='btn btn-default' onclick=\"window.location.href='modify-job.php?id=$id'\">Modify Job</button>";
+}?>
 
 </body>
 </html>
