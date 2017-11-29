@@ -50,6 +50,9 @@
   <button type="submit" class="btn btn-default">Create new Job</button>
 </form>
 
+<form action="job-list.php">
+  <button type="submit" class="btn btn-default">Go to Job list</button>
+</form>
 
 </body>
 </html>
