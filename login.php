@@ -30,12 +30,16 @@
     $result = $conn->query($sql);
 
     if($result->num_rows>0){
-
+      $row=$result->fetch_assoc();
+      if($pass==$row["password"]){
       session_start();
       $_SESSION["email"]=$email;
       session_write_close();
 
       header("Location: profile.php?email=$email");
+    } else{
+      echo"<div class='alert alert-danger'>Wrong password!</div>";
+    }
 
     } else{
       echo"<div class='alert alert-danger'>No user with such e-mail!</div>";
