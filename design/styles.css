@@ -1,0 +1,99 @@
+body{
+    background-color: white;
+}
+.form-wrap{
+  margin: 0 auto;
+  background-color:#4ebaaa;
+
+  border-radius:10px;
+  padding:30px;
+
+}
+@font-face {
+    font-family: myTenor;
+    src: url(fonts\TenorSans-Regular.ttf);
+}
+header {
+  padding: 20px 0;
+  margin-bottom: 3rem;
+  margin-top: 1rem;
+
+  height: 3rem;
+}
+
+header .row {
+  display: flex;
+  align-items: center;
+  background-color: #f4511e;
+
+}
+
+
+
+header nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+header p {
+
+  margin: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: beige;
+  padding: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  font-family: 'Lato', sans-serif;
+
+}
+
+header p:hover {
+  background-color: #b91400;
+}
+header p:active{
+   background-color: darkcyan;
+}
+section{
+    margin-top: 10rem;
+
+}
+
+section .names {
+  font-size: 2rem;
+  color: black;
+  margin-right: 2rem;
+}
+section .values{
+  font-size: 1.8rem;
+
+}
+
+.btn.btn-default {
+
+  border-radius: 10%;
+  border: 0px;
+  color: darkcyan;
+  text-shadow: none;
+  background-color: #ffffff;
+}
+section label{
+  font-size:14px;
+}
+section h3,h4{
+    color: black;
+    margin-bottom: 0.5rem;
+}
+section h5{
+  text-decoration:underline;
+}
+section h5:hover{
+  color:blueviolet;
+}
+
+footer {
+  font-size: 1rem;
+  padding: 20px 0;
+  margin-top: 3rem;
+  text-align: right;
+}

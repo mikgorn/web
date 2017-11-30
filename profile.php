@@ -10,7 +10,7 @@
 
 
 <body>
-
+<?php include("header.php");?>
 <?php
   $email=$_GET["email"];
 
@@ -57,6 +57,6 @@
 <form action="modify-profile.php">
   <button type="submit" class="btn btn-default">Modify profile</button>
 </form>
-
+<?php include("footer.php");?>
 </body>
 </html>

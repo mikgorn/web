@@ -10,7 +10,7 @@
 
 
 <body>
-
+<?php include("header.php");?>
   <?php
     session_start();
     $email=$_SESSION["email"];
@@ -60,6 +60,6 @@
     <button type="submit" action="signup.php"class="btn btn-default" >Modify</button>
   </form>
 
-
+<?php include("footer.php");?>
 </body>
 </html>

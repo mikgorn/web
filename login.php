@@ -10,7 +10,7 @@
 
 
 <body>
-
+<?php include("header.php");?>
   <?php
 
     $email = $_POST["email"];
@@ -62,6 +62,6 @@
     <button type="submit" action="signup.php"class="btn btn-default" >Log In</button>
   </form>
 
-
+<?php include("footer.php");?>
 </body>
 </html>

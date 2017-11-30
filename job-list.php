@@ -10,7 +10,7 @@
 
 
 <body>
-
+<?php include("header.php");?>
   <table class="table">
       <thead>
         <tr>
@@ -58,6 +58,6 @@
 
 
 
-
+<?php include("footer.php");?>
 </body>
 </html>

@@ -10,7 +10,7 @@
 
 
 <body>
-
+<?php include("header.php");?>
   <?php
     $id=$_GET["id"];
 
@@ -96,6 +96,6 @@
     <button type="submit" class="btn btn-default" >Modify</button>
   </form>
 
-
+<?php include("footer.php");?>
 </body>
 </html>

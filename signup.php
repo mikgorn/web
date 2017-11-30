@@ -10,7 +10,7 @@
 
 
 <body>
-
+<?php include("header.php");?>
   <?php
     $test=$_GET["test"];
     if($test=="duplicate"){
@@ -68,6 +68,6 @@
     <button type="submit" action="signup.php"class="btn btn-default" >Sign Up</button>
   </form>
 
-
+<?php include("footer.php");?>
 </body>
 </html>

@@ -10,7 +10,7 @@
 
 
 <body>
-
+<?php include("header.php");?>
   <?php
   session_start();
   $email=$_SESSION["email"];
@@ -89,6 +89,6 @@
 
   </form>
 
-
+<?php include("footer.php");?>
 </body>
 </html>

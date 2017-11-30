@@ -10,7 +10,7 @@
 
 
 <body>
-
+<?php include("header.php");?>
 <?php
   $id=$_GET["id"];
   $new=$_GET["new"];
@@ -130,6 +130,6 @@ if(mysqli_num_rows($result)>0){
 if($email==$owner){
   echo"<button type='submit' class='btn btn-default' onclick=\"window.location.href='modify-job.php?id=$id'\">Modify Job</button>";
 }?>
-
+<?php include("footer.php");?>
 </body>
 </html>
