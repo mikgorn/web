@@ -110,4 +110,5 @@ footer {
 .menu{
   text-decoration: none !important;
   color: inherit !important;
+  white-space: nowrap;
 }
