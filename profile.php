@@ -39,6 +39,9 @@
     }
 
 ?>
+<section class = "container">
+  <div class="col-sm-6 col-xs-12 col-sm-offset-3 form-wrap">
+
 <label>Name</label>
 <p><?php echo"$name"?></p>
 <br />
@@ -57,6 +60,9 @@
 <form action="modify-profile.php">
   <button type="submit" class="btn btn-default">Modify profile</button>
 </form>
+
+</div>
+</section>
 <?php include("footer.php");?>
 </body>
 </html>

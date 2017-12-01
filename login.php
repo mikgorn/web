@@ -48,7 +48,12 @@
 
 
    ?>
-  <h1>Login page of Burgerboss</h1>
+   <section class = "container">
+     <div class="col-sm-6 col-xs-12 col-sm-offset-3 form-wrap">
+
+       <div class="col-sm-12" style="display:inline-block; padding:20px; font-size:20px;" align="center">
+         <h1>Login page of Burgerboss</h1>
+       </div>
 
 
   <form method ="post">
@@ -59,9 +64,13 @@
     <label>Password</label>
     <input type="text" class="form-control" name="pass" />
 
+    <div style="padding:10px;">
     <button type="submit" action="signup.php"class="btn btn-default" >Log In</button>
+    <div>
+      
   </form>
-
+</div>
+   </section>
 <?php include("footer.php");?>
 </body>
 </html>

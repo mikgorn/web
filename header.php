@@ -1,12 +1,13 @@
-<header class = "container">
+<header class = "container-fluid">
     <div class = "row">
-      <nav class = "col-sm-4 text-left">
-         <p>MAIN</p> 
+      <nav class = "col-lg-2 col-xs-2  text-left" >
+         <p>MAIN</p>
       </nav>
-      <nav class="col-sm-8 text-right">
+      <nav class="col-lg-2 "></nav>
+      <nav class="col-lg-8 col-xs-10 text-right">
         <p>LOG IN</p>
         <p>SIGN UP</p>
       	<p>CONTACT</p>
       </nav>
     </div>
-</header> 
+</header>

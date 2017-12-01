@@ -5,21 +5,21 @@ body{
 .form-wrap{
   margin: 0 auto;
   background-color:rgba(255,255,255,0.4);
-  
+
   border-radius:7px;
   padding:30px;
-  
- 
+
+
 }
 @font-face {
     font-family: myTenor;
     src: url(fonts\TenorSans-Regular.ttf);
 }
 header {
-  
-  margin-bottom: 3rem; 
+
+  margin-bottom: 3rem;
   margin-top: 1rem;
-  
+
   height: 3rem;
 }
 
@@ -27,7 +27,7 @@ header .row {
   display: flex;
   align-items: center;
   background-color: #00695c;
-    
+
 }
 
 
@@ -38,42 +38,42 @@ header nav {
 }
 
 header p {
-  
+
   margin: 0.5rem;
   font-size: 1.5rem;
   font-weight: 600;
   color: beige;
   padding: 1rem;
   padding-top: 0.75rem;
-  padding-bottom: 0.75rem;  
+  padding-bottom: 0.75rem;
   font-family: 'Lato', sans-serif;
-  opacity:1;    
-  
+  opacity:1;
+
 }
 
-header p:hover { 
-  background-color: black;   
+header p:hover {
+  background-color: black;
 }
 header p:active{
-   background-color: darkcyan; 
+   background-color: darkcyan;
 }
 section{
-    margin-top: 10rem; 
-    
+    margin-top: 10rem;
+
 }
 
-section .names {    
-  font-size: 2rem; 
+section .names {
+  font-size: 2rem;
   color: black;
   margin-right: 2rem;
 }
 section .values{
-  font-size: 1.8rem; 
+  font-size: 1.8rem;
 
 }
 
 .btn.btn-default {
-  
+
   border-radius: 2%;
   border: 1px solid black;
   color: #000000;
@@ -94,10 +94,10 @@ section h3,h4{
     color: black;
     margin-bottom: 0.5rem;
 }
-section h5{ 
+section h5{
   text-decoration:underline;
 }
-section h5:hover{ 
+section h5:hover{
   color:blueviolet;
 }
 
@@ -105,5 +105,5 @@ footer {
   font-size: 1rem;
   padding: 20px 0;
   margin-top: 3rem;
-  text-align: right;    
+  text-align: right;
 }

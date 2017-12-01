@@ -11,6 +11,10 @@
 
 <body>
 <?php include("header.php");?>
+
+<section class = "container">
+  <div class="col-sm-6 col-xs-12 col-sm-offset-3 form-wrap">
+
   <?php
     $test=$_GET["test"];
     if($test=="duplicate"){
@@ -67,6 +71,9 @@
 
     <button type="submit" action="signup.php"class="btn btn-default" >Sign Up</button>
   </form>
+  
+</div>
+</section>
 
 <?php include("footer.php");?>
 </body>

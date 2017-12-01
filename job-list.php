@@ -11,6 +11,10 @@
 
 <body>
 <?php include("header.php");?>
+
+<section class = "container">
+  <div class="col-sm-12 col-xs-12  form-wrap">
+
   <table class="table">
       <thead>
         <tr>
@@ -57,6 +61,8 @@
 </table>
 
 
+</div>
+</section>
 
 <?php include("footer.php");?>
 </body>

@@ -11,6 +11,10 @@
 
 <body>
 <?php include("header.php");?>
+
+<section class = "container">
+  <div class="col-sm-6 col-xs-12 col-sm-offset-3 form-wrap">
+
 <?php
   $id=$_GET["id"];
   $new=$_GET["new"];
@@ -130,6 +134,10 @@ if(mysqli_num_rows($result)>0){
 if($email==$owner){
   echo"<button type='submit' class='btn btn-default' onclick=\"window.location.href='modify-job.php?id=$id'\">Modify Job</button>";
 }?>
+
+</div>
+</section>
+
 <?php include("footer.php");?>
 </body>
 </html>

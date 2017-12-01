@@ -11,6 +11,10 @@
 
 <body>
 <?php include("header.php");?>
+
+<section class = "container">
+  <div class="col-sm-6 col-xs-12 col-sm-offset-3 form-wrap">
+
   <?php
   session_start();
   $email=$_SESSION["email"];
@@ -88,7 +92,8 @@
     <button type="submit" class="btn btn-default" >Create new Job</button>
 
   </form>
-
+</div>
+</section>
 <?php include("footer.php");?>
 </body>
 </html>
