@@ -78,13 +78,13 @@
     <input type="text" class="form-control" name="name" />
 
     <label>Description</label>
-    <input type="text" class="form-control" name="description" />
+    <textarea rows="5" type="text" class="form-control" name="description" ></textarea>
 
     <label>Skill requirement</label>
     <input type="text" class="form-control" name="skill" />
 
     <label>Payment</label>
-    <input type="text" class="form-control" name="payment" />
+    <input type="number" class="form-control" name="payment" />
 
     <label>Deadline</label>
     <input type="text" class="form-control" name="deadline" />

@@ -62,12 +62,12 @@
     <input type="text" class="form-control" name="email" />
 
     <label>Password</label>
-    <input type="text" class="form-control" name="pass" />
+    <input type="password" class="form-control" name="pass" />
 
     <div style="padding:10px;">
     <button type="submit" action="signup.php"class="btn btn-default" >Log In</button>
     <div>
-      
+
   </form>
 </div>
    </section>

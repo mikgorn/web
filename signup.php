@@ -64,14 +64,14 @@
     <input type="text" class="form-control" name="email" />
 
     <label>Password</label>
-    <input type="text" class="form-control" name="pass" />
+    <input type="password" class="form-control" name="pass" />
 
     <label>Repeat password</label>
-    <input type="text" class="form-control" name="repass" />
+    <input type="password" class="form-control" name="repass" />
 
     <button type="submit" action="signup.php"class="btn btn-default" >Sign Up</button>
   </form>
-  
+
 </div>
 </section>
 

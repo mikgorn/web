@@ -69,6 +69,10 @@
 <?php
   include("server.php");
 
+  session_start();
+  $email=$_SESSION["email"];
+  session_write_close();
+
   $conn = new mysqli($servername,$username,$password,$database);
   if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -84,6 +88,7 @@
       $description=$row["description"];
       $skill=$row["skill"];
       $payment=$row["payment"];
+      $owner=$row["email"];
       $deadline=$row["deadline"];
       echo"<script>
       $(document).ready(function(){
@@ -106,7 +111,7 @@
           <div class = 'col-sm-12 desc'>
               <h3 style = 'color: #439889;'>$name</h3>
 
-              <button class='btn btn-primary' id ='show$i'>More</button>
+
 
               <div id = 'info$i' style='display:none'>
                   <h4 style = 'margin-top: 1%;'>Description:</h4>
@@ -123,14 +128,20 @@
                       <h4>Deadline:</h4>
                       <p class = 'noline'>$deadline</p>
                   </div>
+                  ";
+                  if($email==$owner){
+                    echo"
+                  <p class='edit' onclick=\"window.location.href='modify-job.php?id=$id'\">E</p>
 
-                  <p class='edit'>E</p>
-                  <p class='delete'>X</p>
+                  <p class='delete'>X</p>";}
+                  echo"
                   <p class='apply' onclick=\"window.location.href='job.php?id=$id'\">Apply</p>
 
                </div>
-               <button class='btn btn-primary' id = 'hide$i' style='display:none'>Hide</button>
+
            </div>
+           <button class='btn btn-primary' id ='show$i'>More</button>
+           <button class='btn btn-primary' id = 'hide$i' style='display:none'>Hide</button>
         </div>
       </div>";
     }

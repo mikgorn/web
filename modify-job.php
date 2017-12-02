@@ -91,7 +91,7 @@
     <input type="text" class="form-control" name="skill" />
 
     <label>Payment</label>
-    <input type="text" class="form-control" name="payment" />
+    <input type="number" class="form-control" name="payment" />
 
     <label>Deadline</label>
     <input type="text" class="form-control" name="deadline" />
