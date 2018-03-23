@@ -1,0 +1,58 @@
+
+---Upload files---
+Redux file was not uploaded. Error: Файл пуст. Пожалуйста, загрузите что-то более существенное. Эта ошибка также может означать, что в php.ini запрещены загрузки, либо значение post_max_size меньше, чем upload_max_filesize.
+
+---Upload files---
+The import files were successfully uploaded!
+Initial max execution time = 30
+Files info:
+Site URL = http://localhost/aquanika
+Data file = /home/kirill/www/aquanika/wp-content/uploads/2018/03/content-3.xml
+Widget file = /home/kirill/www/aquanika/wp-content/uploads/2018/03/widgets-3.wie
+Customizer file = /home/kirill/www/aquanika/wp-content/uploads/2018/03/customizer_options-3.dat
+Redux files:
+not defined!
+
+---Importing widgets---
+Sidebar : 
+
+Поиск - Quick Search - Imported
+Свежие записи - No Title - Widget already exists
+Свежие комментарии - No Title - Widget already exists
+Архивы - No Title - Widget already exists
+Рубрики - No Title - Widget already exists
+Мета - No Title - Widget already exists
+
+Left Sidebar : 
+
+Календарь - Calendar - Imported
+Архивы - Archives - Imported
+Страницы - Pages - Imported
+Мета - Meta - Imported
+
+Below Slider Area : 
+
+Текст - No Title - Imported
+
+Home Counter Area : 
+
+The100: Call to Action - No Title - Imported
+
+Above Footer Area : 
+
+The100: Call to Action - No Title - Imported
+
+Top Footer : 
+
+Текст - THE 100 - Imported
+Страницы - QUICK LINKS - Imported
+Текст - OUR LOCATION - Imported
+
+Footer Menu : 
+
+Меню навигации - No Title - Imported
+
+
+
+---Importing customizer settings---
+Customizer settings import finished!

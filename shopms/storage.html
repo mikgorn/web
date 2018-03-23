@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+<body>
+  <div class="row header">
+    <div class="col-lg-3 col-sm-3">
+    </div>
+    <div class="col-lg-3 col-sm-6 header-menu">
+
+        <a class="btn header-menu-item">Главная</a>
+        <a class="btn header-menu-item">Склад</a>
+        <a class="btn header-menu-item">Статистика</a>
+
+
+    </div>
+
+    <div class="col-lg-3 col-sm-0">
+    </div>
+
+    <div class="col-lg-3 col-sm-3">
+      <a class="btn btn-primary login-button">Войти</a>
+    </div>
+  </div>
+
+  <div class="row  content">
+    <div class="col-lg-2 col-sm-0">
+    </div>
+    <div class="col-lg-2 col-sm-4">
+      <form method="post" class="info-block">
+        <h3>Поиск по магазинам</h3>
+        <div class="form-group">
+          <label>Брэнд</label>
+          <input type="text" class="form-control" name="brand" />
+        </div>
+
+        <div class="form-group">
+          <label >Артикул</label>
+          <input type="text" class="form-control" name="code" />
+        </div>
+
+        <div class="form-group">
+          <label >Сезон</label>
+          <input type="text" class="form-control" name="season" />
+        </div>
+
+        <div class="form-group">
+          <label >Магазин</label>
+          <select  class="form-control" name="shop" >
+            <option>Brava 1</option>
+            <option>Brava 2</option>
+            <option>Brava 3</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <input type="submit" class="btn btn-primary login-btn" value="Войти"/>
+        </div>
+      </form>
+
+    </div>
+    <div class="col-lg-6 col-sm-8">
+      <div class="info-block">
+        <h4>Результат поиска</h4>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Брэнд</th>
+              <th>Артикул</th>
+              <th>Размер</th>
+              <th>Количество</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Gucci</td>
+              <td>g1001</td>
+              <td>36</td>
+              <td>5</td>
+              <td><a class="btn btn-info">More</a></td>
+            </tr>
+            <tr>
+              <td>Gucci</td>
+              <td>g1002</td>
+              <td>40</td>
+              <td>10</td>
+              <td><a class="btn btn-info">More</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col-lg-2 col-sm-0">
+    </div>
+  </div>
+</body>

@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+body{
+  font-family: 'Roboto';
+}
+.header{
+  background-color: #5f021f;
+
+  border-style: solid;
+  border-width:   0px 0px 5px 0px;
+  border-color: #ffcc00
+}
+.footer{
+  flex: 0 0 auto;
+  background-color: #5f021f;
+  padding: 10px;
+  display: block;
+  width:100%;
+
+  border-style: solid;
+  border-width: 5px 0px 0px 0px;
+  border-color: #ffcc00
+}
+
+.main-page{
+  padding:20px;
+  color: black;
+  font-weight: bold;
+  background-image: url(images/main-bg.jpg);
+}
+.main-page p{
+  font-size: 3rem;
+  font-weight: 400;
+}
+.user-info{
+  font-size: 15px;
+  padding: 10px;
+  display: inline;
+  color: #ffffff;
+}
+.user-info p{
+  padding: 0px;
+  margin: 0px 0px 0px 20px;
+}
+.menu-buttons{
+  padding: 20px;
+  display: inline;
+}
+.menu-main-button{
+}
+
+.menu-items{
+  width:100%;
+  padding:5px;
+}
+.menu-item{
+}
+.btn-shop{
+  display: block;
+  width: 70%;
+  margin:10px auto 10px auto;
+  padding: 3 px;
+}
+
+.input-field{
+  margin: 20px;
+}
+.money{
+  font-size: 17px;
+  font-weight: bold;
+}
+.money-cash{
+  font-size: 20px;
+}
+.money-card{
+  font-size: 20px;
+}
+.money-debt{
+  font-size: 20px;
+}
+small{
+  font-weight: lighter;
+}
