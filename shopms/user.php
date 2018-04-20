@@ -12,34 +12,6 @@
         <?php
         include("header.php");
         ?>
-        <div class="row">
-            <div class="col-lg-2 col-sm-0"></div>
-            
-            <div class="col-lg-2 col-sm-4">
-                <img src="avatar.png" class="img-circle avatar" alt="Avatar photo">
-                <div class="block">
-                    
-                    <div class="param">
-                        <div class="param-name">
-                            <span>asdsadgf</span>
-                        </div>
-                        <div class="param-val">
-                            <span>asdsadgf</span>
-                        </div>
-                    </div>
-                    <div class="param">
-                        <div class="param-name">
-                            <span>asdsadgf</span>
-                        </div>
-                        <div class="param-val">
-                            <span>asdsadgf</span>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="col-lg-2"></div>
-        </div>
+        
     </body>
 </html>
