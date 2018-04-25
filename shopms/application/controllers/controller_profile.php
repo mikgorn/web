@@ -11,22 +11,38 @@ class Controller_Profile extends Controller
 	{	
         
         $data = array();
-        $data["user"] = $this->model->get_user();
-        $data["role"] = $this->model->get_role();
+        $user = $this->model->get_user();
+        $data["user_data"]=$this->model->get_user_data($user);
         
-        $data["profile"] = $_GET["user"];
+        $data["profile"] = $this->model->get_user_data($user);
         
 		$this->view->generate('profile_view.php', 'template_view.php',$data);
 	}
     
-    function action_user($login){
+    function action_user($id){
         $data = array();
-        $data["user"] = $this->model->get_user();
-        $data["role"] = $this->model->get_role();
+        $user = $this->model->get_user();
+        $data["user_data"] = $this->model->get_user_data($user);
+        $data["is_mine"] = false;
+        if($id==$this->model->get_user_name($user)){
+            $data["is_mine"]=true;
+        }
         
-        $data["profile"] = $this->model->get_user_data($login);
+        $profile = $this->model->get_user_data($id);
+        $data["profile"] = $profile;
+        $data["company"] = $this->model->get_company_data($profile["company"]);
         
 		$this->view->generate('profile_view.php', 'template_view.php',$data);
+    }
+    function action_company($id){
+        $data = array();
+        $user = $this->model->get_user();
+        
+        $data["user_data"] = $this->model->get_user_data($user);
+        
+        $data["company"] = $this->model->get_company_data($id);
+        
+		$this->view->generate('profile_company_view.php', 'template_view.php',$data);
     }
 }
 ?>

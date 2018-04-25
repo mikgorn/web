@@ -11,8 +11,9 @@ class Controller_Main extends Controller
 	{	
         
         $data = array();
-        $data["user"] = $this->model->get_user();
-        $data["role"] = $this->model->get_role();
+        $user = $this->model->get_user();
+        $data["user_data"] = $this->model->get_user_data($user);
+        
 		$this->view->generate('main_view.php', 'template_view.php',$data);
 	}
 }

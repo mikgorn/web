@@ -21,12 +21,11 @@ class Controller_Login extends Controller
 			if($this->model->authentication($login,$password))
 			{
 				$data["login_status"] = "access_granted";
-				$role = "3";
-                $role = $this->model->get_role_from_db($login);
-				$this->model->set_user($login);
-                $this->model->set_role($role);
+                $user=$this->model->get_id($login);
+                $role = $this->model->get_role($user);
+				$this->model->set_user($user);
 				header(
-"Location: /web/shopms/profile/user/$login");
+"Location: /web/shopms/profile/user/$user");
                 
 			}
 			else
@@ -39,9 +38,9 @@ class Controller_Login extends Controller
 			$data["login_status"] = "";
 		}
         
-		$data = array();
-        $data["user"] = $this->model->get_user();
-        $data["role"] = $this->model->get_role();
+		 $data = array();
+        $user = $this->model->get_user();
+        $data["user_data"] = $this->model->get_user_data($user);
         
 		$this->view->generate('login_view.php', 'template_view.php', $data);
 	}
