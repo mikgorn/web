@@ -44,5 +44,16 @@ class Controller_Profile extends Controller
         
 		$this->view->generate('profile_company_view.php', 'template_view.php',$data);
     }
+    function action_shop($id){
+        $data = array();
+        $user = $this->model->get_user();
+        
+        $data["user_data"] = $this->model->get_user_data($user);
+        
+        $data["shop"] = $this->model->get_shop_data($id);
+        
+        
+        $this->view->generate('profile_shop_view.php', 'template_view.php',$data);
+    }
 }
 ?>
