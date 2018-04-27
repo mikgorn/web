@@ -120,6 +120,22 @@ class Model
         } 
         return $empty_company;
     }
+    public function get_items_data($id){
+        $empty_items = array();
+         $conn = new mysqli(self::servername,self::username,self::password,self::database);
+
+        $sql = "select * from items where company='$id';";
+        $result = $conn->query($sql);
+        if(mysqli_num_rows($result)>0){
+            $items = array();
+                while($row = $result->fetch_assoc()){
+                    array_push($items,$row);
+                }
+            
+            return $items;
+        } 
+        return $empty_items;
+    }
 	public function get_data()
 	{
 	}

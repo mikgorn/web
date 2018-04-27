@@ -4,4 +4,4 @@
 <p>Phone 2 <?php echo($shop["phone2"]);?></p>
 
 
-?>
+

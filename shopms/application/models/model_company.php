@@ -48,5 +48,28 @@ class Model_Company extends Model{
         return true;
     }
     
+    function is_duplicate_item($brand,$code,$company){
+        $is_duplicate = false;
+        $conn = new mysqli(self::servername,self::username,self::password,self::database);
+
+        $sql = "select * from items where brand='$brand' and code='$code' and company='$company';";
+        $result = $conn->query($sql);
+        if(mysqli_num_rows($result)>0){
+            $is_duplicate = true;
+        }
+        return $is_duplicate;
+    }
+    
+    public function new_item($brand, $code, $season, $price_low, $price_high,$company){
+         $conn = new mysqli(self::servername,self::username,self::password,self::database);
+        $id = uniqid();
+        $sql = "insert into items(id,brand,code,season,price_low,price_high,company) values('$id','$brand', '$code', '$season', $price_low, $price_high,'$company');";
+        $result = $conn->query($sql);
+        if($conn->error){
+            return false;
+        }
+        return true;
+    }
+    
 }
 ?>

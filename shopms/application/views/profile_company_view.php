@@ -40,4 +40,12 @@ foreach($shops as $shop){
 if($company["id"]==$user_data["company"] && $user_data["access"]==1){
     echo"<a class='btn btn-primary' href='/web/shopms/company/create_shop/'>Create shop</a>";
 }
+
 ?>
+
+<?php
+        if($company["id"]==$user_data["company"]){
+            $id = $company["id"];
+        echo"<a class='btn btn-primary' href='/web/shopms/profile/items/$id'>Item list</a>";
+        }
+        ?>
