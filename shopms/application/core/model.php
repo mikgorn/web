@@ -69,7 +69,7 @@ class Model
     
     public function get_user_data($id){
         $empty_user=array();
-        $empty_user["name"]="";
+        $empty_user["id"]="";
          $conn = new mysqli(self::servername,self::username,self::password,self::database);
 
         $sql = "select * from users where id='$id';";
@@ -136,6 +136,21 @@ class Model
         } 
         return $empty_items;
     }
+    
+    public function get_item_data($id){
+        $empty_item=array();
+        $empty_item["id"]="";
+         $conn = new mysqli(self::servername,self::username,self::password,self::database);
+
+        $sql = "select * from items where id='$id';";
+        $result = $conn->query($sql);
+        if(mysqli_num_rows($result)>0){
+            $row = $result->fetch_assoc();
+            return $row;
+        } 
+        return $empty_item;
+    }
+    
 	public function get_data()
 	{
 	}

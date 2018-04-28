@@ -67,5 +67,20 @@ class Controller_Profile extends Controller
         
         $this->view->generate('item_list_view.php', 'template_view.php',$data);
     }
+    
+    function action_item($id){
+        $data = array();
+        $user= $this->model->get_user();
+        
+        $data["user_data"] = $this->model->get_user_data($user);
+        
+        $user_data = $data["user_data"];
+        $company_id = $user_data["company"];
+        
+        $data["company"] = $this->model->get_company_data($company_id);
+        
+        $data["item"] = $this->model->get_item_data($id);
+        $this->view->generate('item_view.php', 'template_view.php',$data);
+    }
 }
 ?>
