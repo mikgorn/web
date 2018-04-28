@@ -6,7 +6,6 @@
 
 <?php if($user_data["company"] == $item["company"]){
     $id = $item["id"];
-    
     echo"
 <form method='post'>";
     echo"

@@ -85,13 +85,44 @@ class Model
     public function get_shop_data($id){
         $empty_shop=array();
         $empty_shop["name"]="";
+        $items = array();
+        $empty_shop["items"] = $items;
          $conn = new mysqli(self::servername,self::username,self::password,self::database);
 
         $sql = "select * from shops where id='$id';";
         $result = $conn->query($sql);
         if(mysqli_num_rows($result)>0){
-            $row = $result->fetch_assoc();
-            return $row;
+            $shop = $result->fetch_assoc();
+            
+            //creating list of company items names
+            $company_items = array();
+            $company_id = $shop["company"];
+            $sql1 = "select * from items where company='$company_id';";
+            $result1 = $conn->query($sql1);
+            if(mysqli_num_rows($result1)>0){
+                while($row = $result1->fetch_assoc()){
+                    $item_id = $row["id"];
+                    $company_items[$item_id]=$row;
+                }
+            }
+            
+            
+            
+            $sql1 = "select * from storage_items where shop='$id' and amount>0;";
+            $result1 = $conn->query($sql1);
+            if(mysqli_num_rows($result1)>0){
+                while($row = $result1->fetch_assoc()){
+                    $item_id = $row["item"];
+                    $item = $company_items[$item_id];
+                    $row["brand"] =$item["brand"];
+                    $row["code"] = $item["code"];
+                    $row["season"] = $item["season"];
+                    $row["price_high"] = $item["price_high"];
+                    array_push($items,$row);
+                }
+            }
+            $shop["items"] = $items;
+            return $shop;
         } 
         return $empty_shop;
     }
@@ -108,6 +139,8 @@ class Model
         if(mysqli_num_rows($result)>0){
             $company = $result->fetch_assoc();
             
+            
+            
             $sql1 = "select * from shops where company='$id';";
             $result1 = $conn->query($sql1);
             if(mysqli_num_rows($result1)>0){
@@ -115,6 +148,8 @@ class Model
                     array_push($shops,$row);
                 }
             }
+            
+            
             $company["shops"] = $shops;
             return $company;
         } 
@@ -151,6 +186,32 @@ class Model
         return $empty_item;
     }
     
+    public function send_item($item,$source,$destination,$size,$amount,$user,$type="send",$customer="",$cash=0,$card=0,$debt=0,$memo=""){
+        $conn = new mysqli(self::servername,self::username,self::password,self::database);
+        
+        //increase values
+        if($destination!='outside' && $destination!='sell'){
+        $sql = "select * from storage_items where item='$item' and size=$size and shop='$destination';";
+            $result = $conn->query($sql);
+            echo $conn->error;
+            if(mysqli_num_rows($result)>0){
+                $sql1 = "update storage_items set amount = amount+$amount where item='$item' and size=$size and shop='$destination';";
+            } else{
+                $sql1 = "insert into storage_items(item,size,amount,shop) values('$item',$size,$amount,'$destination');";
+            }
+            $result = $conn->query($sql1);
+        }
+        
+        //decreasing values
+        if($source!='outside'){
+            $sql = "update storage_items set amount = amount-$amount where item='$item' and size=$size and shop='$source';";
+            $result = $conn->query($sql);
+        }
+        $id = uniqid();
+        $date = date("Y.m.d H:i");
+        $sql = "insert into logs(id,item,type,source,destination,user,time,cash,card,debt,memo,customer,size) values('$id','$item','$type','$source','$destination','$user','$date',$cash,$card,$debt,'$memo','$customer',size);";
+        $result = $conn->query($sql);
+    }
 	public function get_data()
 	{
 	}

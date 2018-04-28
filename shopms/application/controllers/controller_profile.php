@@ -72,6 +72,20 @@ class Controller_Profile extends Controller
         $data = array();
         $user= $this->model->get_user();
         
+        if(isset($_POST["send"])){
+            $source = $_POST["source"];
+            $destination = $_POST["destination"];
+            $item = $_POST["item"];
+            
+            for($i = 19;$i<40;$i++){
+                if($_POST[$i]>0){
+                    $amount = $_POST[$i];
+                    $this->model->send_item($item,$source,$destination,$i,$amount,$user);
+                }
+            }
+        }
+        
+        
         $data["user_data"] = $this->model->get_user_data($user);
         
         $user_data = $data["user_data"];
