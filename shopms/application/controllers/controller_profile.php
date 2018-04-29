@@ -76,12 +76,25 @@ class Controller_Profile extends Controller
             $source = $_POST["source"];
             $destination = $_POST["destination"];
             $item = $_POST["item"];
-            
+            if($destination == "sell"){
+                $customer = $_POST["customer"];
+                $cash = intval($_POST["cash"]);
+                $card = intval($_POST["card"]);
+                $debt = intval($_POST["debt"]);
+                $memo = $_POST["memo"];
+                for($i = 19;$i<40;$i++){
+                if($_POST[$i]>0){
+                    $amount = $_POST[$i];
+                    $this->model->send_item($item,$source,$destination,$i,$amount,$user,"sell",$customer,$cash,$card,$debt,$memo);
+                }
+            }
+            } else{
             for($i = 19;$i<40;$i++){
                 if($_POST[$i]>0){
                     $amount = $_POST[$i];
                     $this->model->send_item($item,$source,$destination,$i,$amount,$user);
                 }
+            }
             }
         }
         

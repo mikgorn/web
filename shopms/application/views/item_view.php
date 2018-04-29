@@ -8,11 +8,30 @@
 <?php if($user_data["company"] == $item["company"]){
     $id = $item["id"];
     echo"
-<form method='post'>";
-    
+<form method='post' onsubmit=\"return confirm('Are you sure you wish to send items?')\">";
+    $price_high = $item["price_high"];
     echo"
     <label>Action</label>
-    <select class='form-control' name='destination'>";
+    
+    <script>
+    var max_opened = 0;
+    $(document).ready   (function(){
+    chose_destination();
+    });
+    function chose_destination(){
+        var select = document.getElementById('destination');
+        var destination = select.options[select.selectedIndex].value;
+        if(destination=='sell'){
+            $('#customer_info').show(500);
+            document.getElementById('cash').value = $price_high;
+        } else{
+            $('#customer_info').hide(500);
+            document.getElementById('cash').value = 0;
+        }
+    }
+    </script>
+    
+    <select class='form-control' onchange='chose_destination()' name='destination' id = 'destination'>";
     if(isset($shop_id)){
         echo"<option value='sell'>Sell</option>";
         echo"<option value='outside'>Drop</option>";
@@ -57,7 +76,7 @@
             });
             
           $('#button$i').click(function(){
-            if(x$i==0){
+            if(x$i==0 ){
               x$i=1;
               $('#form$i').show(500);
               document.getElementById('button$i').style.background='darkgray';
@@ -148,6 +167,18 @@
     }
     
     
+    echo"<div id = 'customer_info'>
+        <label>Cash</label>
+        <input class='form-control' type='number' name='cash' id = 'cash'/>
+        <label>Card</label>
+        <input class='form-control' type='number' name='card' id = 'card'/>
+        <label>Debt</label>
+        <input class='form-control' type='number' name='debt' id = 'debt'/>
+        <label>Customer name</label>
+        <input class='form-control' type='text' name='customer' id = 'customer'/>
+        <label>Memo</label>
+        <textarea class='form-control' rows='5' name='memo' id = 'memo'></textarea>
+    </div>";
     
     if(isset($shop_id)){echo"<input type='hidden' value='$shop_id' name = 'source'/> <input type='hidden' name='shop' value='$shop_id'/>";  } else{echo"<input type='hidden' value='outside' name = 'source'/>"; }
     
