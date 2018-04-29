@@ -209,8 +209,32 @@ class Model
         }
         $id = uniqid();
         $date = date("Y.m.d H:i");
-        $sql = "insert into logs(id,item,type,source,destination,user,time,cash,card,debt,memo,customer,size) values('$id','$item','$type','$source','$destination','$user','$date',$cash,$card,$debt,'$memo','$customer',size);";
+        $sql = "insert into logs(id,item,type,source,destination,user,time,cash,card,debt,memo,customer,size,amount) values('$id','$item','$type','$source','$destination','$user','$date',$cash,$card,$debt,'$memo','$customer',$size,$amount);";
         $result = $conn->query($sql);
+    }
+    
+    public function get_item_sizes($item, $shop){
+         $conn = new mysqli(self::servername,self::username,self::password,self::database);
+
+        $sql = "select * from storage_items where item='$item' and shop='$shop';";
+        $result = $conn->query($sql);
+        if(mysqli_num_rows($result)>0){
+            $items = array();
+                while($row = $result->fetch_assoc()){
+                    $size = $row["size"];
+                    $amount = $row["amount"];
+                    $items[$size] = $amount;
+                }
+            
+            return $items;
+        } else return null;
+    }
+    public function get_all_sizes(){
+        $sizes = array();
+        for($i=19;$i<=40;$i++){
+            $sizes[$i] = 999;
+        }
+        return $sizes;
     }
 	public function get_data()
 	{

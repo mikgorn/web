@@ -85,7 +85,18 @@ class Controller_Profile extends Controller
             }
         }
         
+        if (isset($_POST["shop"])){
+            $shop_id = $_POST["shop"];
+            $shop_data = $this->model->get_shop_data($shop_id);
+            $data["shop_id"] = $shop_id;
+            $data["shop_name"] = $shop_data["name"];
+            
+            $data["sizes"] = $this->model->get_item_sizes($id,$shop_id);
+        } else{
+            $data["sizes"] = $this->model->get_all_sizes();
+        }
         
+       
         $data["user_data"] = $this->model->get_user_data($user);
         
         $user_data = $data["user_data"];
