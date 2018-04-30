@@ -1,3 +1,4 @@
+<div class="header">
 <a href="/web/shopms" class="btn btn-primary">Main</a>
 <a href="/web/shopms/login" class="btn btn-primary">Login</a>
 <?php
@@ -22,3 +23,5 @@ if($user_data["id"]!=""){
     echo"<p>Welcome, $user_name ($user_access)</p>";
 }
 ?>
+    
+</div>

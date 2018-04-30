@@ -11,7 +11,7 @@
                 <label>Password</label>
                 <input type="password" class="form-control" name="password"/>
             </div>
-            <input type="submit" value = "Log In"/>
+            <input type="submit" class="btn btn-primary" value = "Log In"/>
             <p>Dont have account? <a href="/web/shopms/register">Register</a></p>
         </form>
     </div>
