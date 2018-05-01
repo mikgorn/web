@@ -236,6 +236,46 @@ class Model
         }
         return $sizes;
     }
+    
+    public function get_shop_cash($id){
+       
+         $conn = new mysqli(self::servername,self::username,self::password,self::database);
+
+        $sql = "select SUM(cash) as sum from logs where source='$id';";
+        $result = $conn->query($sql);
+        if(mysqli_num_rows($result)>0){
+            $row = $result->fetch_assoc();
+            
+            return $row["sum"];
+        } 
+        return 0;
+    }
+    public function get_shop_card($id){
+       
+         $conn = new mysqli(self::servername,self::username,self::password,self::database);
+
+        $sql = "select SUM(card) as sum from logs where source='$id';";
+        $result = $conn->query($sql);
+        if(mysqli_num_rows($result)>0){
+            $row = $result->fetch_assoc();
+            
+            return $row["sum"];
+        } 
+        return 0;
+    }
+    public function get_shop_debt($id){
+       
+         $conn = new mysqli(self::servername,self::username,self::password,self::database);
+
+        $sql = "select SUM(debt) as sum from logs where source='$id';";
+        $result = $conn->query($sql);
+        if(mysqli_num_rows($result)>0){
+            $row = $result->fetch_assoc();
+            
+            return $row["sum"];
+        } 
+        return 0;
+    }
 	public function get_data()
 	{
 	}

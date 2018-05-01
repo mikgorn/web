@@ -52,6 +52,9 @@ class Controller_Profile extends Controller
         
         $data["shop"] = $this->model->get_shop_data($id);
         
+        $data["cash"] = $this->model->get_shop_cash($id);
+        $data["card"] = $this->model->get_shop_card($id);
+        $data["debt"] = $this->model->get_shop_debt($id);
         
         $this->view->generate('profile_shop_view.php', 'template_view.php',$data);
     }

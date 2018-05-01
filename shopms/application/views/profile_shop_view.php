@@ -1,4 +1,7 @@
 <h1>Shop <?php echo($shop["name"]);?></h1>
+<h2>Cash <?php echo $cash; ?></h2>
+<h2>Card <?php echo $card; ?></h2>
+<h2>Debt <?php echo $debt; ?></h2>
 <p>Address <?php echo($shop["address"]);?></p>
 <p>Phone 1 <?php echo($shop["phone1"]);?></p>
 <p>Phone 2 <?php echo($shop["phone2"]);?></p>
